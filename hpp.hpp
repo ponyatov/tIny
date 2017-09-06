@@ -1,15 +1,16 @@
 #ifndef _H_HPP
 #define _H_HPP
 
-#include <cstdlib>
 #include <iostream>
+#include <cstdlib>
 
 using namespace std;
 
-struct Sym {
-	string tag,val;
-	Sym(string);
-	virtual string dump(int depth=0);
+struct Sym {							// === [sym]bol
+	string tag,val;						// tag (class, type) and item value
+	Sym(string T,string V);				// <tag:value>	constructor
+	Sym(string V);						// <sym:V>		contructor
+	virtual string dump(int depth=0);	// dump element
 };
 
 extern int yylex();
